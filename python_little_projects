@@ -1,0 +1,31 @@
+#ENTREVISTADOS 50 ALUNOS DE ENGENHARIA FORAM COLETADOS IDADE
+#SEMESTRE E CURSO. IMPLEMENTE UM PROGRAMA QUE SORTEIE ESTES DADOS
+#E CALCULE A MEDIA DE IDADE DOS ESTUDANTES, O CURSO DO MAIS VELHO E
+#A QUANTIDADE DE ALUNOS QUE ESTÃO NO 5º PERÍODO
+import random
+
+cursos = ['mecanica','de produção','elétrica','aeronáutica','náutica']
+semestres = ['1','2','3','4','5','6']
+
+soma_idade = 0
+idade_mais_velho = 0
+aluno5 = 0
+curso_mais_velho = ''
+
+for cont in range(50):
+  curso = random.choice(cursos)
+  semestre = random.choice(semestres)
+  idade = random.randint(15,24)
+
+  soma_idade = soma_idade + idade
+
+  if semestre == '5':
+    aluno5 += 1
+
+  if idade>idade_mais_velho:
+    idade_mais_velho = idade
+    curso_mais_velho = curso
+
+  media = soma_idade/50
+else:
+  print(f'média das idades: {media}anos\nCurso do mais velho: engenharia {curso_mais_velho}\nAlunos do 5º: {aluno5} alunos')
